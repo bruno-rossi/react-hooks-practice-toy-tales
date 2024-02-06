@@ -6,7 +6,7 @@ function ToyCard({ toy, toys, setToys }) {
 
   function handleDelete(event) {
 
-    fetch(`http://localhost:3001/toys/${toy.id}`, {
+    fetch(`http://127.0.0.1:5555/toys/${toy.id}`, {
       method: "DELETE",
       headers: {
         "Accept": "application/json",
@@ -24,8 +24,7 @@ function ToyCard({ toy, toys, setToys }) {
 
   function handleLikeClick() {
 
-    const updatedLikes = likes +1;
-    setLikes(likes => updatedLikes);
+    const updatedLikes = likes + 1;
 
     const patchedToy = {
       ...toy,
@@ -34,7 +33,7 @@ function ToyCard({ toy, toys, setToys }) {
 
     console.log(patchedToy);
 
-    fetch(`http://localhost:3001/toys/${toy.id}`, {
+    fetch(`http://127.0.0.1:5555/toys/${toy.id}`, {
       method: "PATCH",
       headers: {
         "Accept": "application/json",
@@ -52,7 +51,8 @@ function ToyCard({ toy, toys, setToys }) {
           return element
         }
       });
-  
+      
+      setLikes(likes => updatedLikes);
       console.log(toysAfterPatch);
   
       setToys(toysAfterPatch);

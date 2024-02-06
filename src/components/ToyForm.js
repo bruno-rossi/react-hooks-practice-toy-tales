@@ -14,7 +14,7 @@ function ToyForm({ toys, setToys }) {
       likes: 0
     }
 
-    fetch("http://localhost:3001/toys", {
+    fetch("http://127.0.0.1:5555/toys", {
       method: "POST",
       headers: {
         "Accept": "application/json",

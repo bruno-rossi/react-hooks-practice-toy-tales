@@ -1,14 +1,3 @@
-// Root
-// └── App
-//     ├── Header
-//     ├── ToyForm
-//     ├── ToyContainer
-//         └── ToyCard
-
-// Deliverable 4:
-// When the like button is clicked, make a PATCH request to /toys/:id with the id of the toy that was clicked, along with the new number of likes (this should be sent in the body of the PATCH request, as a object: { likes: 10 }), to update the toy on the server. Clicking on the button should also increase the number of likes on the DOM.
-
-
 import React, { useState, useEffect } from "react";
 
 import Header from "./Header";
@@ -25,7 +14,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:3001/toys")
+    fetch("http://127.0.0.1:5555/toys")
     .then(response => response.json())
     .then(data => setToys(data))    
   }, [])
